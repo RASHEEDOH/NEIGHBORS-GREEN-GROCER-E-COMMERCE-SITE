@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEIGHBORS GREEN GROCER</title>
+    <link rel="website icon" type="png" href="main_logo.JPG">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="SignUp.css"> 
+    <style>
+        .form-input {
+            width: calc(100% - 22px); 
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .payment-number-container {
+            display: flex;
+            align-items: center;
+            width: 440px;
+        }
+        .country-code {
+            width: 60px;
+            margin-right: 5px;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .payment-number {
+            flex-grow: 1;
+        }
+        .custom-select-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .custom-select-icon {
+            width: 40px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .password-container {
+            position: relative;
+            width: 450px;
+        }
+        .toggle-password {
+            cursor: pointer;
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+        }
+        .error {
+            border: 2px solid red;
+        }
+        .error-message {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="LOGO">
+            <a href="home.html"><img src="neighbors_logo.png"></a>
+        </div>    
+        <div class="title">
+            <a href="home.html">NEIGHBORS GREEN GROCER</a>
+        </div>        
+        <ul class="links_menu">
+            <li class="links_item">
+                <a href="home.html" class="navigation_link">HOME</a>
+            </li>
+            <li class="links_item">
+                <a href="Recipes.html" class="navigation_link">RECIPES</a>
+            </li>
+            <li class="links_item">
+                <a href="shop.html" class="navigation_link">SHOP</a>
+            </li>
+            <li class="links_item">
+                <a href="order.html" class="navigation_link">ORDER</a>
+            </li> 
+            <li class="links_item">
+                <a href="Login.html"><button class="SignUp">Sign In</button></a>
+            </li>               
+        </ul>       
+    </nav>
+
+    <div class="personal_details">
+        <div class="image">
+            <a href="home.html"><img src="neighbors_logo.png" alt="Logo"></a>
+        </div>  
+        <form id="signUpForm" action="send_email.php" method="POST">
+            <input type="text" placeholder="First Name" class="form-input" id="firstName" name="firstName">
+            <input type="text" placeholder="Middle Name" class="form-input" id="middleName" name="middleName">
+            <input type="text" placeholder="Last Name" class="form-input" id="lastName" name="lastName">
+            <input type="email" placeholder="Email Address" class="form-input" id="email" name="email">
+            <input type="text" placeholder="Preferred Username" class="form-input" id="username" name="username">
+            <input type="date" placeholder="Date of Birth" class="form-input" id="dob" name="dob">
+            <select class="form-input" id="gender" name="gender">
+                <option value="" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <select name="paymentMethod" class="form-input payment-select" id="payment-method">
+                <option value="" disabled selected>Preferred Payment Method</option>
+                <option value="mpesa">M-Pesa</option>
+            </select>
+            <div class="payment-number-container">
+                <input type="text" value="+254" class="form-input country-code" readonly>
+                <input type="text" placeholder="Payment Number" class="form-input payment-number" id="paymentNumber" name="paymentNumber">
+            </div>
+            <div class="password-container">
+                <input type="password" placeholder="Password" class="form-input password" id="password" name="password">
+                <span class="toggle-password" onclick="togglePassword('password')">Show</span>
+            </div>
+            <div class="password-container">
+                <input type="password" placeholder="Confirm Password" class="form-input password" id="confirmPassword" name="confirmPassword">
+                <span class="toggle-password" onclick="togglePassword('confirmPassword')">Show</span>
+            </div>
+            <button type="submit">Sign Up</button>
+            <p class="error-message" id="errorMessage">All fields are required.</p>
+        </form>   
+    </div>
+    
+    <script>
+        function togglePassword(fieldId) {
+            const field = document.getElementById(fieldId);
+            const toggleText = field.nextElementSibling;
+            if (field.type === 'password') {
+                field.type = 'text';
+                toggleText.textContent = 'Hide';
+            } else {
+                field.type = 'password';
+                toggleText.textContent = 'Show';
+            }
+        }
+
+        document.getElementById('signUpForm').addEventListener('submit', function (event) {
+            const fields = [
+                document.getElementById('firstName'),
+                document.getElementById('middleName'),
+                document.getElementById('lastName'),
+                document.getElementById('email'),
+                document.getElementById('username'),
+                document.getElementById('dob'),
+                document.getElementById('gender'),
+                document.getElementById('paymentNumber'),
+                document.getElementById('password'),
+                document.getElementById('confirmPassword')
+            ];
+
+            let allFilled = true;
+            fields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('error');
+                    allFilled = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+
+            const errorMessage = document.getElementById('errorMessage');
+            if (!allFilled) {
+                event.preventDefault();
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let cartCount = 0;
+        const cartItems = {};
+    
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cartCount;
+        }
+    
+        function addToCart(event) {
+            const button = event.target;
+            const item = button.getAttribute('data-item');
+            const quantity = parseInt(document.querySelector(`.quantity[data-item="${item}"]`).textContent);
+    
+            if (cartItems[item]) {
+                delete cartItems[item];
+                cartCount -= quantity;
+                button.textContent = 'Add to cart';
+            } else {
+                cartItems[item] = quantity;
+                cartCount += quantity;
+                button.textContent = 'Remove from cart';
+            }
+    
+            updateCartCount();
+        }
+    
+        function changeQuantity(event) {
+            const button = event.target;
+            const item = button.getAttribute('data-item');
+            const quantityDisplay = document.querySelector(`.quantity[data-item="${item}"]`);
+            let quantity = parseInt(quantityDisplay.textContent);
+    
+            if (button.classList.contains('plus')) {
+                quantity++;
+            } else if (button.classList.contains('minus') && quantity > 0) {
+                quantity--;
+            }
+    
+            quantityDisplay.textContent = quantity;
+    
+            // Update cart if the item is already in the cart
+            if (cartItems[item]) {
+                const addToCartButton = document.querySelector(`.add-to-cart[data-item="${item}"]`);
+                cartCount = cartCount - cartItems[item] + quantity;
+                cartItems[item] = quantity;
+                updateCartCount();
+                if (quantity === 0) {
+                    delete cartItems[item];
+                    addToCartButton.textContent = 'Add to cart';
+                }
+            }
+        }
+    
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', addToCart);
+        });
+    
+        const plusButtons = document.querySelectorAll('.plus');
+        plusButtons.forEach(button => {
+            button.addEventListener('click', changeQuantity);
+        });
+    
+        const minusButtons = document.querySelectorAll('.minus');
+        minusButtons.forEach(button => {
+            button.addEventListener('click', changeQuantity);
+        });
+    });
+    </script>

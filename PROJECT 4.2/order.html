@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page - NEIGHBORS GREEN GROCER</title>
+    <link rel="website icon" type="png" href="main_logo.JPG">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="LOGO">
+            <a href="home.html"> <img src="neighbors_logo.png"></a>
+        </div>    
+        <div class="title">
+            <a href="home.html">NEIGHBORS GREEN GROCER</a>
+        </div>
+        <ul class="links_menu">
+            <li class="links_item"><a href="home.html" class="navigation_link">HOME</a></li>
+            <li class="links_item"><a href="Recipes.html" class="navigation_link">RECIPES</a></li>
+            <li class="links_item"><a href="shop.html" class="navigation_link">SHOP</a></li>
+            <li class="links_item"><a href="order.html" class="navigation_link">ORDER</a></li>
+            <li class="links_item"><a href="Login.html"><button class="SignUp">Sign In</button></a></li>
+        </ul>       
+    </nav>
+
+    <section class="centered-section">
+        <h2>Your Order Summary</h2>
+        <div id="error-message" style="display: none; color: red;">No items in your cart. Please add items to your cart before proceeding.</div>
+        <table id="order-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="total-price">Total Price: 0/=</div> 
+        <button id="confirm-order" class="checkout">Confirm Order</button>
+    </section>
+    
+    <script src="order.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="recipe.css">
+</head>
+<body>
+
+    
+    <nav class="navigation">
+        <div class="LOGO">
+            <a href="home.html"> <img src="Logo.png" width="100px" height="70px">NEIGHBORS GREEN GROCER</a>
+        </div>
+        
+            <ul class="links_menu">
+                <li class="links_item">
+                    <a href="/" class="navigation_link">SHOP</a>
+                </li>
+                <li class="links_item">
+                    <a href="/" class="navigation_link">ORDER</a>
+                </li>                
+            </ul>       
+    </nav>
+
+
+
+
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:'Kumbh Sans', sans-serif;
+}

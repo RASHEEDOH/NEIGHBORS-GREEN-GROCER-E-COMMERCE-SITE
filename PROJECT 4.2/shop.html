@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEIGHBORS GREEN GROCER </title>
+    <link rel="website icon"tvpe="png" href="main_logo.JPG">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="LOGO">
+            <a href="home.html"> <img src="neighbors_logo.png"></a>
+        </div>    
+        <div class="title">
+            <a href="home.html">NEIGHBORS GREEN GROCER</a>
+        </div>        
+        
+        
+            <ul class="links_menu">
+                <li class="links_item">
+                    <a href="home.html" class="navigation_link">HOME</a>
+                </li>
+                <li class="links_item">
+                  <a href="Recipes.html" class="navigation_link">RECIPES</a>
+                </li>
+                <li class="links_item">
+                    <a href="shop.html" class="navigation_link">SHOP</a>
+                </li>
+                <li class="links_item">
+                    <a href="order.html" class="navigation_link">ORDER</a>
+                </li> 
+                <li class="links_item">
+                    <a href="Login.html"> <button class="SignUp">Sign In</button></a>
+                </li>                   
+            </ul>       
+     </nav>
+     <section class="centered-section">
+        <button class="centered-button">
+            <div class="cart-icon">
+            <img src="cart_image.png" alt="Cart Image">
+            <div class="cart-icon"><span id="cart-count">0</span></div>
+           </div> 
+        </button>
+        <div id="cart-modal" class="cart-modal">
+            <div class="cart-modal-content">
+                <span class="close">&times;</span>
+                <h2>Items in Cart</h2>
+                <table id="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <a href="order.html"><button class="checkout" id="checkout-button">Checkout</button></a>
+            </div>
+        </div>
+    
+    </section>
+    
+
+<div class="content">
+    <div class="search-tab">
+        <h1>Shop by category</h1> 
+        <div class="shopping">                    
+            <div class="legumes">
+                <img src="legumes.jpeg" alt="">
+                <h1>Legumes</h1>
+                <p>shop for beans, peas, groundnuts etc</p>
+            </div> 
+
+            <div class="cereals">
+                <img src="cereals.webp" alt="">
+                <h1>Cereals</h1>
+                <p>This includes oats, wimbi, rice, sorghum and millet</p>
+            </div>
+
+            <div class="vegetables">
+                <img src="Veggy3.jpg" alt="">
+                <h1>Vegetables and Fruits</h1>
+                <p>This includes normal vegetbles and fruits such as carrot,onions,lemons,oranges etc</p>
+            </div>
+
+            <div class="greens">
+                <img src="Food.jpeg" alt="">
+                <h1>Greens</h1>
+                <p>This includes special greens such as seaweed, pigweed, kunde and managu</p>
+            </div>
+
+        </div>  
+      
+    </div>
+    <div class="filtered-items">
+
+    </div>
+
+    <div class="instructions">
+        <h1>SHOP ITEMS</h1>
+        <form id="search-form" action="#" method="get">
+            <input type="text" id="search-input" placeholder="Search for products..." name="search" class="search-input">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+
+        <div class="overlay" id="overlay"></div>
+        <div id="spinner" class="spinner">
+            <img src="greens_spinner.png" alt="">Please wait..
+        </div>
+        
+        <div id="grid-container" class="grid-container">
+            <div class="item">
+                <img src="Apples.jpg" alt="Apples">
+                <p>Apples</p>
+                <p class="price"><b>20/=</b></p> 
+                <div class="quantity-control">
+                    <button class="minus" data-item="Apples">-</button>
+                    <span class="quantity" data-item="Apples">0</span>
+                    <button class="plus" data-item="Apples">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Apples">Add to cart</button>
+            </div> 
+
+            <div class="item">
+                <img src="Orange.jpeg" alt="oranges">
+                <p>Oranges</p>
+                <p class="price"><b>25/=</b></p> 
+                <div class="quantity-control">
+                    <button class="minus" data-item="Oranges">-</button>
+                    <span class="quantity" data-item="Oranges">0</span>
+                    <button class="plus" data-item="Oranges">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Oranges">Add to cart</button>
+            </div> 
+
+            <div class="item">
+                <img src="Kunde.jpg" alt="Kunde">
+                <p>Kunde</p>
+                <p class="price"><b>60/=</b></p>  
+                <div class="quantity-control">
+                    <button class="minus" data-item="Kunde">-</button>
+                    <span class="quantity" data-item="Kunde">0</span>
+                    <button class="plus" data-item="Kunde">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Kunde">Add to cart</button>
+            </div>
+
+            <div class="item">
+                <img src="carrots.jpeg" alt="Carrots">
+                <p>Carrots</p>
+                <p class="price"><b>15/=</b></p> 
+                <div class="quantity-control">
+                    <button class="minus" data-item="Carrots">-</button>
+                    <span class="quantity" data-item="Carrots">0</span>
+                    <button class="plus" data-item="Carrots">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Carrots">Add to cart</button>
+            </div>    
+            
+            <div class="item">
+                <img src="potatoes.jpg" alt="Potaotes">
+                <p>Potatoes</p>
+                <p class="price"><b>350/=</b></p>  
+                <div class="quantity-control">
+                    <button class="minus" data-item="Potatoes">-</button>
+                    <span class="quantity" data-item="Potatoes">0</span>
+                    <button class="plus" data-item="Potatoes">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Potatoes">Add to cart</button>
+            </div>
+
+            <div class="item">
+                <img src="Onions.jpg" alt="Onions">
+                <p>Apples</p>
+                <p class="price"><b>30/=</b></p> 
+                <div class="quantity-control">
+                    <button class="minus" data-item="Onions">-</button>
+                    <span class="quantity" data-item="Onions">0</span>
+                    <button class="plus" data-item="Onions">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Onions">Add to cart</button>
+            </div>
+
+            <div class="item">
+                <img src="Terere.jpeg" alt="Terere">
+                <p>Terere</p>
+                <p class="price"><b>60/=</b></p> 
+                <div class="quantity-control">
+                    <button class="minus" data-item="Terere">-</button>
+                    <span class="quantity" data-item="Terere">0</span>
+                    <button class="plus" data-item="Terere">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Terere">Add to cart</button>
+            </div>
+
+            <div class="item">
+                <img src="Sukumawiki.jpg" alt="Sukumawiki">
+                <p>Sukumawiki</p>
+                <p class="price"><b>70/=</b></p>  
+                <div class="quantity-control">
+                    <button class="minus" data-item="Sukumawiki">-</button>
+                    <span class="quantity" data-item="Sukumawiki">0</span>
+                    <button class="plus" data-item="Sukumawiki">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Sukumawiki">Add to cart</button>
+            </div>
+
+            <div class="item">
+                <img src="Yellowbeans.jpeg" alt="Item">
+                <p>Yellow Beans</p>
+                <p class="price"><b>120/=</b></p> 
+                <div class="quantity-control">
+                    <button class="minus" data-item="Yellow Beans">-</button>
+                    <span class="quantity" data-item="Yellow Beans">0</span>
+                    <button class="plus" data-item="Yellow Beans">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Yellow Beans">Add to cart</button>
+            </div>
+
+            <div class="item">
+                <img src="Oats.jpeg" alt="Oats">
+                <p>Oats</p>
+                <p class="price"><b>90/=</b></p> 
+                <div class="quantity-control">
+                    <button class="minus" data-item="Oats">-</button>
+                    <span class="quantity" data-item="Oats">0</span>
+                    <button class="plus" data-item="Oats">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Oats">Add to cart</button>
+            </div>
+
+            <div class="item">
+                <img src="millet.jpg" alt=" Millet">
+                <p>Millet</p>
+                <p class="price"><b>90/=</b></p> 
+                <div class="quantity-control">
+                    <button class="minus" data-item="Millet">-</button>
+                    <span class="quantity" data-item="Millet">0</span>
+                    <button class="plus" data-item="Millet">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Millet">Add to cart</button>
+            </div>
+
+            <div class="item">
+                <img src="GreenGrams.jpg" alt="Green Grams">
+                <p>Ndengu</p>
+                <p class="price"><b>120/=</b></p> 
+                <div class="quantity-control">
+                    <button class="minus" data-item="Ndengu">-</button>
+                    <span class="quantity" data-item="Ndengu">0</span>
+                    <button class="plus" data-item="Ndengu">+</button>
+                </div>
+                <button class="add-to-cart" data-item="Terere">Add to cart</button>
+            </div>
+            
+            
+        </div>
+            
+    </div>
+</div>
+
+
+<div class="contacts">
+    <h1>You can find us on:</h1>
+    <a href="https://www.instagram.com"><img src="insta.png" alt="Instagram" title="Follow us on Instagram" width="60px" height="60px"></a>
+    <a href="https://www.facebook.com"><img src="facebook.png" alt="Facebook" title="Follow us on Facebook" width="60px" height="60px"></a>
+    <a href="https://twitter.com/i/flow/login"><img src="X.png" alt="X" title="Folllow us on X" width="60px" height="60px"></a>
+    <a href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER"><img src="WhatsApp.png" alt="WhatsApp" title="Contact us via WhatsApp" width="60px" height="60px"></a>
+    <div class="info">
+        <h2>contat us via SMS:0794186563 <br> or email us at:greengrocers@gmail.com</h2>
+    </div>  
+</div>
+   
+</body>
+
+<script src="shop.js"></script>
+
+</html>

